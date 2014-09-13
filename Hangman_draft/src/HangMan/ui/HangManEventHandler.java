@@ -150,7 +150,7 @@ public class HangManEventHandler {
 	/**
      * This method responds to when the user requests to exit the application.
      * 
-     * @param window The window that the user has requested to close.
+     * @param primaryStage window The window that the user has requested to close.
      */
 	public void respondToExitRequest(Stage primaryStage)
     {
