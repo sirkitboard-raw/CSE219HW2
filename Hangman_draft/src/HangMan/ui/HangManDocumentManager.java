@@ -118,7 +118,15 @@ public class HangManDocumentManager {
 			Element loseH2 = gameDoc.getElement(LOSE_DISPLAY_ID);
 
 			System.out.println(gameInProgress.getWrongTimes());
-			if (gameInProgress.isWordFound()) {
+			if (gameInProgress.getWrongTimes() >= 6) {
+				// PLAYER HAS LOST
+				System.out.println("GET LOST");
+
+				String lossText = props
+						.getProperty(HangManPropertyType.LOSE_DISPLAY_TEXT);
+				gameDoc.setInnerHTML(loseH2, lossText);
+			}
+			else if (gameInProgress.isWordFound()) {
 				// PLAYER HAS WON
 				String winText = props
 						.getProperty(HangManPropertyType.WIN_DISPLAY_TEXT);
@@ -153,7 +161,7 @@ public class HangManDocumentManager {
      * player.
      * 
      * @param guess Guess letter .
-     * @param newGuessMatch The so-far-guessed word,with correct letters and underlines .
+     * @param guessMatch The so-far-guessed word,with correct letters and underlines .
      * @return htmlText
      */
 	

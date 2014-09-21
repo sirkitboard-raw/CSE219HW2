@@ -273,7 +273,16 @@ public class HangManUI extends Pane {
 		northToolbar.setAlignment(Pos.CENTER);
 		northToolbar.setPadding(marginlessInsets);
 		northToolbar.setSpacing(10.0);
-		// northToolbar.addKeyListener(cheatKeyHandler);
+		northToolbar.setOnKeyPressed(new EventHandler<KeyEvent>(){
+
+			@Override
+			public void handle(KeyEvent ke) {
+				// TODO Auto-generated method stub
+				cheatKeyHandler.keyPressed(ke);
+			}
+
+
+		});
 
 		// MAKE AND INIT THE GAME BUTTON
 		gameButton = initToolbarButton(northToolbar,
@@ -364,7 +373,16 @@ public class HangManUI extends Pane {
 		// MAKE THE BUTTON
 		Button button = new Button();
 		button.setGraphic(imageIcon);
-		// button.addKeyListener(cheatKeyHandler);
+		button.setOnKeyPressed(new EventHandler<KeyEvent>(){
+
+			@Override
+			public void handle(KeyEvent ke) {
+				// TODO Auto-generated method stub
+				cheatKeyHandler.keyPressed(ke);
+			}
+
+
+		});
 		button.setPadding(marginlessInsets);
 
 		// PUT IT IN THE TOOLBAR
@@ -404,7 +422,6 @@ public class HangManUI extends Pane {
 		// THE GUESS HISTORY GOES IN THE CENTER, WHICH WE'LL DISPLAY
 		// USING HTML IN A JEditorPane
 		gamePane = new JEditorPane();
-		// gamePane.addKeyListener(cheatKeyHandler);
 		gamePane.setEditable(false);
 		gamePane.setContentType("text/html");
 		gamePane.setSize(600, 600);
@@ -644,8 +661,7 @@ public class HangManUI extends Pane {
             //letterButton.setBackground(Color.LIGHT_GRAY);
             //letterButton.setForeground(Color.BLACK);
             //letterButton.setEnabled(true);
-        	letterButton.setStyle("-fx-background-color:lightgray");
-        	letterButton.setStyle("-fx-base:black");
+        	letterButton.setStyle("-fx-background-color:lightgray;-fx-base:black");
         	letterButton.setDisable(false);
         }        
     }
