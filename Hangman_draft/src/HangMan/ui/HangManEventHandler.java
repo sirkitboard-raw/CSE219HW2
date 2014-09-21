@@ -115,35 +115,32 @@ public class HangManEventHandler {
      */
     public void respondToGuessWordRequest(Object source,String guess)
     {
-        Button letterButton = (Button)source;
-        HangManGameStateManager gsm = ui.getGSM();
-        //CHECK IF THE LETTER IS IN SECRETWORD
-        //SET COLOR FIRST
-        if(ui.getGSM().getGameInProgress().isRightGuess(guess)){
-            //letterButton.setBackground(Color.GREEN);
-        	letterButton.setStyle("-fx-base:green");
-            //letterButton.setForeground(Color.BLUE);
-        	letterButton.setStyle("-fx-text-fill:blue");
-        	
-            //letterButton.setEnabled(false);
-        	letterButton.setDisable(true);
+	    Button letterButton = (Button)source;
+	    HangManGameStateManager gsm = ui.getGSM();
+	    //CHECK IF THE LETTER IS IN SECRETWORD
+	    //SET COLOR FIRST
+	    if(ui.getGSM().getGameInProgress().isRightGuess(guess)){
+		    //letterButton.setBackground(Color.GREEN);
+		    letterButton.setStyle("-fx-base:green;-fx-text-fill:blue");
+		    //letterButton.setForeground(Color.BLUE);
+		    //letterButton.setEnabled(false);
+		    letterButton.setDisable(true);
 
-        }
-        //WRONG GUESS
-        else if(!ui.getGSM().getGameInProgress().isRightGuess(guess)){
-            //letterButton.setBackground(Color.RED);
-            //letterButton.setForeground(Color.WHITE);
-            //letterButton.setEnabled(false);
-        	letterButton.setStyle("-fx-base:red");
-        	letterButton.setStyle("-fx-text-fill:white");
-        	letterButton.setDisable(true);
-        }
+	    }
+	    //WRONG GUESS
+	    else if(!ui.getGSM().getGameInProgress().isRightGuess(guess)){
+		    //letterButton.setBackground(Color.RED);
+		    //letterButton.setForeground(Color.WHITE);
+		    //letterButton.setEnabled(false);
+		    letterButton.setStyle("-fx-base:red;-fx-text-fill:white");
+		    letterButton.setDisable(true);
+	    }
 
-            // THEN PROCESS THE GUESS
+	    // THEN PROCESS THE GUESS
 
-                String guessState=ui.getGSM().getGameInProgress().getNewGuess();
-                System.out.println(guessState);
-                gsm.processGuess(guessState,guess);
+	    String guessState=ui.getGSM().getGameInProgress().getNewGuess();
+	    System.out.println(guessState);
+	    gsm.processGuess(guessState,guess);
 
     }
 	

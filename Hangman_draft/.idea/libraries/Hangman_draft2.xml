@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Hangman_draft2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/Hangman_draft.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
