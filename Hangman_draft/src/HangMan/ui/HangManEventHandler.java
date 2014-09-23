@@ -39,7 +39,7 @@ public class HangManEventHandler {
      */
 	public void respondToSwitchScreenRequest(HangManUI.HangManUIState uiState){
 		
-		//ui.changeWor
+		ui.changeWorkspace(uiState);
 	}
 	
 	/**
@@ -203,7 +203,9 @@ public class HangManEventHandler {
             // YES, LET'S EXIT
             System.exit(0);
         });
-
+		noButton.setOnAction(e -> {
+			dialogStage.close();
+		});
     }    
 	
 	

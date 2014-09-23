@@ -139,39 +139,39 @@ public class HangManDocumentManager {
 
 				String lossText = props
 						.getProperty(HangManPropertyType.LOSE_DISPLAY_TEXT);
-				gameDoc.setInnerHTML(loseH2, lossText);
-			} else {
-				// GAME IS STILL IN PROGRESS
-				gameDoc.setInnerHTML(winH2, EMPTY_TEXT);
-			}
-		}
-		// THE ERROR HANDLER WILL DEAL WITH ERRORS ASSOCIATED WITH BUILDING
-		// THE HTML FOR THE PAGE, WHICH WOULD LIKELY BE DUE TO BAD DATA FROM
-		// AN XML SETUP FILE
-		catch (BadLocationException | IOException e) {
-			HangManErrorHandler errorHandler = ui.getErrorHandler();
-			errorHandler
-					.processError(HangManPropertyType.INVALID_DOC_ERROR_TEXT);
-		}
+		gameDoc.setInnerHTML(loseH2, lossText);
+	} else {
+		// GAME IS STILL IN PROGRESS
+		gameDoc.setInnerHTML(winH2, EMPTY_TEXT);
 	}
-	
-	/**
-     * This private helper method builds the HTML associated with a guess
-     * as a list item, adding the proper colors as currently set by the
-     * player.
-     * 
-     * @param guess Guess letter .
-     * @param guessMatch The so-far-guessed word,with correct letters and underlines .
-     * @return htmlText
-     */
-	
-	private String buildGuessHTML(String guess, String guessMatch)
-    {
-        // FIRST THE OPENING LIST ITEM TAG WITH THE GUESS
-        // AS ITS ID. THIS IS OK SINCE WE DON'T ALLOW
-        // DUPLICATE GUESSES
-      String htmlText = START_TAG + HTML.Tag.LI + SPACE + HTML.Attribute.ID + EQUAL + QUOTE + QUOTE + END_TAG;
-              // NOW WE NEED TO FORMAT THE COLOR FOR EACH CHARACTER IN THE GUESS
+}
+// THE ERROR HANDLER WILL DEAL WITH ERRORS ASSOCIATED WITH BUILDING
+// THE HTML FOR THE PAGE, WHICH WOULD LIKELY BE DUE TO BAD DATA FROM
+// AN XML SETUP FILE
+catch (BadLocationException | IOException e) {
+		HangManErrorHandler errorHandler = ui.getErrorHandler();
+		errorHandler
+		.processError(HangManPropertyType.INVALID_DOC_ERROR_TEXT);
+		}
+		}
+
+/**
+ * This private helper method builds the HTML associated with a guess
+ * as a list item, adding the proper colors as currently set by the
+ * player.
+ *
+ * @param guess Guess letter .
+ * @param guessMatch The so-far-guessed word,with correct letters and underlines .
+ * @return htmlText
+ */
+
+private String buildGuessHTML(String guess, String guessMatch)
+		{
+		// FIRST THE OPENING LIST ITEM TAG WITH THE GUESS
+		// AS ITS ID. THIS IS OK SINCE WE DON'T ALLOW
+		// DUPLICATE GUESSES
+		String htmlText = START_TAG + HTML.Tag.LI + SPACE + HTML.Attribute.ID + EQUAL + QUOTE + QUOTE + END_TAG;
+		// NOW WE NEED TO FORMAT THE COLOR FOR EACH CHARACTER IN THE GUESS
         for (int i = 0; i < guessMatch.length(); i++)
         {
                 // GET THE COLOR FOR EACH CHARACTER

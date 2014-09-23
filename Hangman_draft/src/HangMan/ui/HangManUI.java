@@ -17,6 +17,7 @@ import HangMan.file.HangManFileLoader;
 import HangMan.game.HangManGameData;
 import HangMan.game.HangManGameStateManager;
 import application.Main.HangManPropertyType;
+import javafx.scene.layout.*;
 import properties_manager.PropertiesManager;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
@@ -30,10 +31,6 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -89,7 +86,7 @@ public class HangManUI extends Pane {
 	private ScrollPane helpScrollPane;
 	private JEditorPane helpPane;
 	private Button homeButton;
-	private Pane workspace;
+	private StackPane workspace;
 
 	// Padding
 	private Insets marginlessInsets;
@@ -399,7 +396,7 @@ public class HangManUI extends Pane {
 	private void initWorkspace() {
 		// THE WORKSPACE WILL GO IN THE CENTER OF THE WINDOW, UNDER THE NORTH
 		// TOOLBAR
-		workspace = new Pane();
+		workspace = new StackPane();
 		mainPane.setCenter(workspace);
 		//mainPane.getChildren().add(workspace);
 		System.out.println("in the initWorkspace");
@@ -424,7 +421,7 @@ public class HangManUI extends Pane {
 		gamePane = new JEditorPane();
 		gamePane.setEditable(false);
 		gamePane.setContentType("text/html");
-		gamePane.setSize(600, 600);
+		gamePanel.resize(600, 600);
 
 		// LET'S LOAD THE INITIAL HTML INTO THE STATS EDITOR PAGE
 		this.loadPage(gamePane, HangManPropertyType.GAME_FILE_NAME);
@@ -434,9 +431,8 @@ public class HangManUI extends Pane {
 		//embed swing into javafx
 		guessesScrollPane = new JScrollPane(gamePane);
 		gameSwingNode = new SwingNode();
-                gameSwingNode.setContent(guessesScrollPane);
-		//guessesScrollPane.autosize();
-		//guessesScrollPane.resize(200, 200);
+        gameSwingNode.setContent(guessesScrollPane);
+		gameSwingNode.resize(525,400);
 
 		// LOAD THE HangMan PICTURE AT ZERO STAGE
 		String HangMan = props
@@ -553,7 +549,7 @@ public class HangManUI extends Pane {
 		// CAN EASILY SWITCH TO IT AT ANY TIME
 
 		//workspace.add(gamePanel, HangManUIState.PLAY_GAME_STATE.toString());
-		workspace.getChildren().add(gamePanel);
+		workspace.getChildren().add(0,gamePanel);
 		System.out.println("in the initgamePane");
 		gsm.startNewGame();
 	}
@@ -581,8 +577,10 @@ public class HangManUI extends Pane {
         
         // NOW ADD IT TO THE WORKSPACE, MEANING WE CAN SWITCH TO IT
         //workspace.add(statsScrollPane, HangManUIState.VIEW_STATS_STATE.toString());
-        //workspace.getChildren().add(statsScrollPane);
-    }
+        statsScrollPane.setVisible(false);
+		workspace.getChildren().add(1,statsScrollPane);
+
+	}
 
     /**
      * This method initializes the help pane and all of its controls.
@@ -641,7 +639,8 @@ public class HangManUI extends Pane {
         
         // ADD IT TO THE WORKSPACE
        // workspace.add(helpPanel, HangManUIState.VIEW_HELP_STATE.toString());
-       // workspace.getChildren().add(helpPanel);
+        helpPanel.setVisible(false);
+		workspace.getChildren().add(2,helpPanel);
     } 
 
 	public Image loadImage(String imageName) {
@@ -694,9 +693,22 @@ public class HangManUI extends Pane {
 	 *            The screen to be switched to.
 	 */
 	public void changeWorkspace(HangManUIState uiScreen) {
-		// SWITCH TO THE REQUESTED SCREEN
-		// CardLayout workspaceCardLayout = (CardLayout)workspace.getLayout();
-		// workspaceCardLayout.show(workspace, uiScreen.toString());
+		if (uiScreen.equals(HangManUIState.VIEW_STATS_STATE)) {
+			workspace.getChildren().get(0).setVisible(false);
+			workspace.getChildren().get(2).setVisible(false);
+			workspace.getChildren().get(1).setVisible(true);
+		}
+		else if (uiScreen.equals(HangManUIState.VIEW_HELP_STATE)){
+			workspace.getChildren().get(0).setVisible(false);
+			workspace.getChildren().get(1).setVisible(false);
+			workspace.getChildren().get(2).setVisible(true);
+		}
+		else if(uiScreen.equals(HangManUIState.PLAY_GAME_STATE)) {
+			workspace.getChildren().get(0).setVisible(true);
+			workspace.getChildren().get(1).setVisible(false);
+			workspace.getChildren().get(2).setVisible(false);
+		}
+
 	}
 	
 	/**
