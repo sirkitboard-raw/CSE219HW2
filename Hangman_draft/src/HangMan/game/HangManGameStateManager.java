@@ -377,7 +377,6 @@ public class HangManGameStateManager {
             // CHANGE THE GAME STATE
             currentGameState = HangManGameState.GAME_OVER;
 	        ui.disableAllButtons();
-
 	        // ADD THE COMPLETED GAME TO THE HISTORY
             gamesHistory.add(gameInProgress);
             

@@ -46,8 +46,8 @@
       <file leaf-file-name="HangManDocumentManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HangMan/ui/HangManDocumentManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1666" max-vertical-offset="5134">
-              <caret line="98" column="75" selection-start-line="98" selection-start-column="75" selection-end-line="98" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="4828">
+              <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,12 +56,12 @@
       <file leaf-file-name="HangManUI.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/HangMan/ui/HangManUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.622449" vertical-offset="2915" max-vertical-offset="13005">
-              <caret line="206" column="43" selection-start-line="206" selection-start-column="43" selection-end-line="206" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.07312925" vertical-offset="2915" max-vertical-offset="13022">
+              <caret line="187" column="59" selection-start-line="187" selection-start-column="59" selection-end-line="187" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6417#6652#0" expanded="true" />
-                <element signature="e#6645#6646#0" expanded="true" />
+                <element signature="e#6418#6653#0" expanded="true" />
+                <element signature="e#6646#6647#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,8 +70,8 @@
       <file leaf-file-name="HangManGameStateManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HangMan/game/HangManGameStateManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5725" max-vertical-offset="6528">
-              <caret line="377" column="36" selection-start-line="377" selection-start-column="36" selection-end-line="377" selection-end-column="36" />
+            <state vertical-scroll-proportion="-17.321428" vertical-offset="4785" max-vertical-offset="6511">
+              <caret line="325" column="14" selection-start-line="325" selection-start-column="14" selection-end-line="325" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -80,8 +80,8 @@
       <file leaf-file-name="HangManEventHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HangMan/ui/HangManEventHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.0" vertical-offset="1079" max-vertical-offset="3689">
-              <caret line="77" column="68" selection-start-line="77" selection-start-column="67" selection-end-line="77" selection-end-column="68" />
+            <state vertical-scroll-proportion="-13.071428" vertical-offset="2864" max-vertical-offset="3689">
+              <caret line="192" column="49" selection-start-line="192" selection-start-column="49" selection-end-line="192" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -449,15 +449,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/HangMan/ui/HangManUI.java</url>
-          <line>539</line>
+          <line>540</line>
           <properties />
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/HangMan/ui/HangManEventHandler.java</url>
-          <line>143</line>
-          <properties />
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/HangMan/ui/HangManEventHandler.java</url>
@@ -520,8 +514,8 @@
           <caret line="516" column="52" selection-start-line="516" selection-start-column="52" selection-end-line="516" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6417#6652#0" expanded="true" />
-            <element signature="e#6645#6646#0" expanded="true" />
+            <element signature="e#6418#6653#0" expanded="true" />
+            <element signature="e#6646#6647#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -565,8 +559,8 @@
           <caret line="377" column="20" selection-start-line="377" selection-start-column="11" selection-end-line="377" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6417#6652#0" expanded="true" />
-            <element signature="e#6645#6646#0" expanded="true" />
+            <element signature="e#6418#6653#0" expanded="true" />
+            <element signature="e#6646#6647#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -610,8 +604,8 @@
           <caret line="434" column="50" selection-start-line="434" selection-start-column="50" selection-end-line="434" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6417#6652#0" expanded="true" />
-            <element signature="e#6645#6646#0" expanded="true" />
+            <element signature="e#6418#6653#0" expanded="true" />
+            <element signature="e#6646#6647#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -655,8 +649,8 @@
           <caret line="513" column="0" selection-start-line="513" selection-start-column="0" selection-end-line="513" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6417#6652#0" expanded="true" />
-            <element signature="e#6645#6646#0" expanded="true" />
+            <element signature="e#6418#6653#0" expanded="true" />
+            <element signature="e#6646#6647#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -815,14 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HangMan/ui/HangManDocumentManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1666" max-vertical-offset="5134">
-          <caret line="98" column="75" selection-start-line="98" selection-start-column="75" selection-end-line="98" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_05/jre/lib/ext/jfxrt.jar!/com/sun/javafx/event/BasicEventDispatcher.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
@@ -854,18 +840,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/HangMan/ui/HangManDocumentManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="4828">
+          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/HangMan/game/HangManGameStateManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6409" max-vertical-offset="6783">
-          <caret line="377" column="36" selection-start-line="377" selection-start-column="36" selection-end-line="377" selection-end-column="36" />
+        <state vertical-scroll-proportion="-17.321428" vertical-offset="4785" max-vertical-offset="6511">
+          <caret line="325" column="14" selection-start-line="325" selection-start-column="14" selection-end-line="325" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HangMan/ui/HangManEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0" vertical-offset="1079" max-vertical-offset="3689">
-          <caret line="77" column="68" selection-start-line="77" selection-start-column="67" selection-end-line="77" selection-end-column="68" />
+        <state vertical-scroll-proportion="-13.071428" vertical-offset="2864" max-vertical-offset="3689">
+          <caret line="192" column="49" selection-start-line="192" selection-start-column="49" selection-end-line="192" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -874,12 +868,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HangMan/ui/HangManUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.622449" vertical-offset="2915" max-vertical-offset="13005">
-          <caret line="206" column="43" selection-start-line="206" selection-start-column="43" selection-end-line="206" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.07312925" vertical-offset="2915" max-vertical-offset="13022">
+          <caret line="187" column="59" selection-start-line="187" selection-start-column="59" selection-end-line="187" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6417#6652#0" expanded="true" />
-            <element signature="e#6645#6646#0" expanded="true" />
+            <element signature="e#6418#6653#0" expanded="true" />
+            <element signature="e#6646#6647#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -196,7 +196,7 @@ public class HangManEventHandler {
         Label exitLabel = new Label(verifyExit);
         exitPane.setCenter(exitLabel);
         exitPane.setBottom(optionPane);
-        Scene scene = new Scene(exitPane, 50, 100);
+        Scene scene = new Scene(exitPane, 200, 100);
         dialogStage.setScene(scene);
         dialogStage.show();
         // WHAT'S THE USER'S DECISION?

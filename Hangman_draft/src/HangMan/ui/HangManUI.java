@@ -169,6 +169,7 @@ public class HangManUI extends Pane {
 	}
 
 	public void initSplashScreen() {
+
 		// INIT THE SPLASH SCREEN CONTROLS
 		PropertiesManager props = PropertiesManager.getPropertiesManager();
 		String splashScreenImagePath = props
@@ -654,10 +655,8 @@ public class HangManUI extends Pane {
 	public void disableAllButtons() {
 		for( Button letterButton : letterButtons.values()) {
 			letterButton.setDisable(true);
-			if (!letterButton.getStyle().contains("green") && !letterButton.getStyle().contains("red")) {
-				//letterButton.setStyle("-fx-base:red;-fx-text-fill:white");
-			}
 		}
+
 	}
 
     private void resetLetterButtonColors()
@@ -775,6 +774,8 @@ public class HangManUI extends Pane {
      PropertiesManager props = PropertiesManager.getPropertiesManager();
      String HangMan = props.getProperty(HangManPropertyType.HANGMAN0_IMG_NAME);
      switch(wrongTimes){
+		 case 0:HangMan = props.getProperty(HangManPropertyType.HANGMAN0_IMG_NAME);
+			 break;
          case 1:HangMan = props.getProperty(HangManPropertyType.HANGMAN1_IMG_NAME);
              break;
          case 2:HangMan = props.getProperty(HangManPropertyType.HANGMAN2_IMG_NAME);
@@ -817,7 +818,7 @@ public class HangManUI extends Pane {
     public void resetUI()
     {
         docManager.clearGamePage();
+		updateHangMan(0);
         resetLetterButtonColors();
-  
     }
 }
