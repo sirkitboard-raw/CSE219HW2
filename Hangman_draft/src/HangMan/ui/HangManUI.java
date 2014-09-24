@@ -198,7 +198,7 @@ public class HangManUI extends Pane {
 		languageSelectionPane = new HBox();
 		languageSelectionPane.setSpacing(10.0);
 		languageSelectionPane.setAlignment(Pos.CENTER);
-		languageSelectionPane.setStyle("-fx-background-color:blue");
+		languageSelectionPane.setStyle("-fx-background-color:white");
 		// languageSelectionPane.setPadding(marginlessInsets);
 		// add key listener
 		languageButtons = new ArrayList<Button>();
@@ -481,7 +481,7 @@ public class HangManUI extends Pane {
 		ImageView newGameButtonImageView = new ImageView(newGameButtonImage);
 		newGameButton.setGraphic(newGameButtonImageView);
 		setTooltip(newGameButton, HangManPropertyType.NEW_GAME_TOOLTIP);
-		
+		newGameButton.autosize();
 		newGameButton.setOnAction(new EventHandler<ActionEvent>(){
 
 			@Override
@@ -491,7 +491,13 @@ public class HangManUI extends Pane {
 			}
 			
 		});
-		
+		newGameButton.setMaxHeight(55);
+		guessingPane.setMaxHeight(60);
+		guessingPane.setMinHeight(60);
+		newGameButton.setMaxHeight(55);
+		newGameButton.setMinHeight(55);
+		newGameButton.setMaxWidth(55);
+		newGameButton.setMinWidth(55);
 		guessingPane.getChildren().add(newGameButton);
 
 		// WE'LL PUT THE LETTER BUTTONS IN THE SOUTH OF THE SOUTH
@@ -557,6 +563,7 @@ public class HangManUI extends Pane {
 		workspace.getChildren().add(0,gamePanel);
 		System.out.println("in the initgamePane");
 		gsm.startNewGame();
+		gamePane.repaint();
 	}
 	
 	 /**
