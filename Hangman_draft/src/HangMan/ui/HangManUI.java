@@ -169,7 +169,6 @@ public class HangManUI extends Pane {
 	}
 
 	public void initSplashScreen() {
-
 		// INIT THE SPLASH SCREEN CONTROLS
 		PropertiesManager props = PropertiesManager.getPropertiesManager();
 		String splashScreenImagePath = props

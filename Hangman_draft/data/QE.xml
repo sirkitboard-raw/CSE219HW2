@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+    <property_list>    
+        <property name="GAME_TITLE_TEXT" value="Hangman - The Guessing Word Game"></property>
+        
+        <!-- THESE ARE THE GUI IMAGES -->
+        <property name="GAME_IMG_NAME"          value="QE_Tyalie.png"></property>
+        <property name="STATS_IMG_NAME"         value="QE_Cenda.png"></property>
+        <property name="HELP_IMG_NAME"          value="QE_Tua.png"></property>
+        <property name="EXIT_IMG_NAME"          value="QE_Awalda.png"></property>
+        <property name="NEW_GAME_IMG_NAME"      value="QE_WinyaTyalie.png"></property>
+        <property name="HOME_IMG_NAME"          value="QE_Eska.png"></property>
+        <property name="HANGMAN0_IMG_NAME"          value="Hangman0.png"></property>
+        <property name="HANGMAN1_IMG_NAME"          value="Hangman1.png"></property>
+        <property name="HANGMAN2_IMG_NAME"          value="Hangman2.png"></property>
+        <property name="HANGMAN3_IMG_NAME"          value="Hangman3.png"></property>
+        <property name="HANGMAN4_IMG_NAME"          value="Hangman4.png"></property>
+        <property name="HANGMAN5_IMG_NAME"          value="Hangman5.png"></property>
+        <property name="HANGMAN6_IMG_NAME"          value="Hangman6.png"></property>
+        <!-- DATA FILES TO LOAD -->
+        <property name="WORD_LIST_FILE_NAME"    value="QE_FiveLetterWordsList.txt"></property>
+        <property name="GAME_FILE_NAME"         value="QE_GameDisplay.html"></property>
+        <property name="STATS_FILE_NAME"        value="QE_StatsDisplay.html"></property>
+        <property name="HELP_FILE_NAME"         value="Help.html"></property>
+        
+        <!-- IN-GAME TEXT -->
+        <property name="GUESS_LABEL"            value="Intya: "></property>
+        <property name="GAME_SUBHEADER_TEXT"    value="Intyas (hosti lekmee e' olin beth)"></property>
+        <property name="WIN_DISPLAY_TEXT"       value="Lle Win!"></property>
+        <property name="LOSE_DISPLAY_TEXT"       value="Lle Au!"></property>
+        <property name="GAME_RESULTS_TEXT"      value="TYALIE "></property>
+        <property name="EXIT_REQUEST_TEXT"      value="Ier lle ure lle wish a' awalda"></property>
+        <property name="YES_TEXT"               value="Uma"></property>
+        <property name="NO_TEXT"                value="N'uma"></property>
+        
+        <!-- TOOLTIPS -->
+        <property name="GAME_TOOLTIP"           value="Auta a' Tyalie"></property>
+        <property name="STATS_TOOLTIP"          value="Auta a' Cenda"></property>
+        <property name="HELP_TOOLTIP"           value="Auta a' Tua"></property>
+        <property name="EXIT_TOOLTIP"           value="Awalda i' Tyalie"></property>
+        <property name="NEW_GAME_TOOLTIP"       value="Start a New Game"></property>
+        <property name="HOME_TOOLTIP"           value="Auta a' to tua"></property>
+        
+        <!-- ERROR FEEDBACK TEXT -->
+        <property name="ERROR_DIALOG_TITLE_TEXT"            value="Talat"></property>
+        <property name="DUPLICATE_WORD_ERROR_TEXT"          value="Tanya lekmee Intya'd"></property>
+        <property name="IMAGE_LOADING_ERROR_TEXT"           value="En Loica Aqua"></property>
+        <property name="INVALID_URL_ERROR_TEXT"             value="N'Aqua URL"></property>
+        <property name="INVALID_DOC_ERROR_TEXT"             value="Talat HTML"></property>
+        <property name="INVALID_XML_FILE_ERROR_TEXT"        value="Talat XML properties file"></property>
+        <property name="INVALID_GUESS_LENGTH_ERROR_TEXT"    value="Talat "></property>
+        <property name="WORD_NOT_IN_DICTIONARY_ERROR_TEXT"  value="Guess intya 1 lekmee"></property>
+        <property name="INVALID_DICTIONARY_ERROR_TEXT"      value="N'Aqua beth list"></property>
+    </property_list>    
+    <property_options_list>
+        <property_options name="LETTER_OPTIONS">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>E</option>
+            <option>F</option>
+            <option>G</option>
+            <option>H</option>
+            <option>I</option>
+            <option>J</option>
+            <option>K</option>
+            <option>L</option>
+            <option>M</option>
+            <option>N</option>
+            <option>O</option>
+            <option>P</option>
+            <option>Q</option>
+            <option>R</option>
+            <option>S</option>
+            <option>T</option>
+            <option>U</option>
+            <option>V</option>
+            <option>W</option>
+            <option>X</option>
+            <option>Y</option>
+            <option>Z</option>
+        </property_options>
+    </property_options_list>
+</properties>
