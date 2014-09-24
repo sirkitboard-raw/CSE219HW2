@@ -87,7 +87,7 @@ public class HangManEventHandler {
                        
             // LOAD THE WORD LIST
             String wordListFile = props.getProperty(HangManPropertyType.WORD_LIST_FILE_NAME);
-            String wordList = HangManFileLoader.loadTextFile(wordListFile);
+			String wordList = HangManFileLoader.loadTextFile(wordListFile);
             gsm.loadWordList(wordList);
             
             // INITIALIZE THE USER INTERFACE WITH THE SELECTED LANGUAGE

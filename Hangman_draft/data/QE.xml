@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <properties>
     <property_list>    
-        <property name="GAME_TITLE_TEXT" value="Hangman - The Guessing Word Game"></property>
+        <property name="GAME_TITLE_TEXT" value="Ndengina Edan - Intya i' Beth"></property>
         
         <!-- THESE ARE THE GUI IMAGES -->
         <property name="GAME_IMG_NAME"          value="QE_Tyalie.png"></property>
@@ -21,7 +21,7 @@
         <property name="WORD_LIST_FILE_NAME"    value="QE_FiveLetterWordsList.txt"></property>
         <property name="GAME_FILE_NAME"         value="QE_GameDisplay.html"></property>
         <property name="STATS_FILE_NAME"        value="QE_StatsDisplay.html"></property>
-        <property name="HELP_FILE_NAME"         value="Help.html"></property>
+        <property name="HELP_FILE_NAME"         value="QE_Help.html"></property>
         
         <!-- IN-GAME TEXT -->
         <property name="GUESS_LABEL"            value="Intya: "></property>
