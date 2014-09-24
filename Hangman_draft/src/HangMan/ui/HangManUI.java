@@ -3,7 +3,9 @@ package HangMan.ui;
 import application.Main;
 import application.Main.HangManPropertyType;
 
-import java.io.IOException;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,6 +20,8 @@ import HangMan.game.HangManGameData;
 import HangMan.game.HangManGameStateManager;
 import application.Main.HangManPropertyType;
 import javafx.scene.layout.*;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import properties_manager.PropertiesManager;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
@@ -76,15 +80,16 @@ public class HangManUI extends Pane {
 	private HBox letterButtonsPane;
 	private HashMap<Character,Button> letterButtons;
 	private BorderPane gamePanel = new BorderPane();
+	private BorderPane statsPanel = new BorderPane();
 	
 	//StatsPane
-	private ScrollPane statsScrollPane;
+	private JScrollPane statsScrollPane;
 	private JEditorPane statsPane;
 	
 	//HelpPane
 	private BorderPane helpPanel;
 	private ScrollPane helpScrollPane;
-	private JEditorPane helpPane;
+	private WebView helpPane;
 	private Button homeButton;
 	private StackPane workspace;
 
@@ -144,7 +149,7 @@ public class HangManUI extends Pane {
 		return errorHandler;
 	}
 	
-	public JEditorPane getHelpPane() 
+	public WebView getHelpPane()
     { 
         return helpPane; 
     }
@@ -561,9 +566,9 @@ public class HangManUI extends Pane {
     {
         // WE'LL DISPLAY ALL STATS IN A JEditorPane
         statsPane = new JEditorPane();
-        statsPane.setEditable(false);
+		statsPane.setEditable(false);
         statsPane.setContentType("text/html");
- 
+		statsPanel.resize(600,600);
         // LOAD THE STARTING STATS PAGE, WHICH IS JUST AN OUTLINE
         // AND DOESN"T HAVE ANY OF THE STATS, SINCE THOSE WILL 
         // BE DYNAMICALLY ADDED
@@ -571,14 +576,14 @@ public class HangManUI extends Pane {
         HTMLDocument statsDoc = (HTMLDocument)statsPane.getDocument();
             docManager.setStatsDoc(statsDoc); 
         SwingNode swingNode = new SwingNode();
-        swingNode.setContent(statsPane);
-        statsScrollPane = new ScrollPane();
-        statsScrollPane.setContent(swingNode);
-        
+
+		statsScrollPane = new JScrollPane(statsPane);
+		swingNode.setContent(statsScrollPane);
+		statsPanel.setCenter(swingNode);
         // NOW ADD IT TO THE WORKSPACE, MEANING WE CAN SWITCH TO IT
         //workspace.add(statsScrollPane, HangManUIState.VIEW_STATS_STATE.toString());
-        statsScrollPane.setVisible(false);
-		workspace.getChildren().add(1,statsScrollPane);
+        statsPanel.setVisible(false);
+		workspace.getChildren().add(1,statsPanel);
 
 	}
 
@@ -588,15 +593,9 @@ public class HangManUI extends Pane {
     private void initHelpPane()
     {
         // WE'LL DISPLAY ALL HELP INFORMATION USING HTML
-        helpPane = new JEditorPane();
-        helpPane.setEditable(false);
-        SwingNode swingNode = new SwingNode();
-        swingNode.setContent(helpPane);
-        helpScrollPane = new ScrollPane();
-        helpScrollPane.setContent(swingNode);
-                        
-        // NOW LOAD THE HELP HTML
-        helpPane.setContentType("text/html");
+        helpPane = new WebView();
+        WebEngine engine = helpPane.getEngine();
+		helpScrollPane = new ScrollPane();
         
         // MAKE THE HELP BUTTON
         PropertiesManager props = PropertiesManager.getPropertiesManager();
@@ -615,12 +614,12 @@ public class HangManUI extends Pane {
         //helpPanel.setLayout(new BorderLayout());
         helpPanel.setTop(helpToolbar);
         
-        helpPanel.setCenter(helpScrollPane);
+        helpPanel.setCenter(helpPane);
         helpToolbar.getChildren().add(homeButton);
         helpToolbar.setStyle("-fx-background-color:white");
         
         // LOAD THE HELP PAGE
-        loadPage(helpPane, HangManPropertyType.HELP_FILE_NAME);
+        loadPage(engine, HangManPropertyType.HELP_FILE_NAME);
         
         // LET OUR HELP PAGE GO HOME VIA THE HOME BUTTON
         homeButton.setOnAction(new EventHandler<ActionEvent>(){
@@ -653,6 +652,15 @@ public class HangManUI extends Pane {
      * This function resets the color buttons so that they all represent
      * unknowns. We do this using grey background and black lettering.
      */
+	public void disableAllButtons() {
+		for( Button letterButton : letterButtons.values()) {
+			letterButton.setDisable(true);
+			if (!letterButton.getStyle().contains("green") && !letterButton.getStyle().contains("red")) {
+				//letterButton.setStyle("-fx-base:red;-fx-text-fill:white");
+			}
+		}
+	}
+
     private void resetLetterButtonColors()
     {
         for (Button letterButton : letterButtons.values())
@@ -747,6 +755,18 @@ public class HangManUI extends Pane {
 			errorHandler.processError(HangManPropertyType.INVALID_URL_ERROR_TEXT);
 		}
 	}
+
+	public void loadPage(WebEngine jep, HangManPropertyType fileProperty) {
+		// GET THE FILE NAME
+		PropertiesManager props = PropertiesManager.getPropertiesManager();
+		String fileName = props.getProperty(fileProperty);
+		System.out.println(fileName);
+		try {
+			jep.load(new File("data/"+fileName).toURI().toURL().toExternalForm());
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	/*This method is used to set HanMan pictures when wrong guess times increases
      * 
@@ -787,17 +807,8 @@ public class HangManUI extends Pane {
      */
     public void loadRemoteHelpPage(URL link)
     {
-        try
-        {
-            // PUT THE WEB PAGE IN THE HELP PANE
-            Document doc = helpPane.getDocument();
-            doc.putProperty(Document.StreamDescriptionProperty, null);
-            helpPane.setPage(link);            
-        }
-        catch(IOException ioe)
-        {
-            errorHandler.processError(HangManPropertyType.INVALID_URL_ERROR_TEXT);
-        }
+       String links = link.getFile();
+		helpPane.getEngine().load(links);
     }
     
     /**

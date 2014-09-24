@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.web.WebView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import application.Main.HangManPropertyType;
@@ -58,8 +59,8 @@ public class HangManEventHandler {
      */
     public void respondToGoHomeRequest()
     {
-        JEditorPane helpPage = ui.getHelpPane();
-        ui.loadPage(helpPage, HangManPropertyType.HELP_FILE_NAME);
+        WebView helpPage = ui.getHelpPane();
+        ui.loadPage(helpPage.getEngine(), HangManPropertyType.HELP_FILE_NAME);
     }
 	
 	/**
@@ -121,7 +122,7 @@ public class HangManEventHandler {
 	    //SET COLOR FIRST
 	    if(ui.getGSM().getGameInProgress().isRightGuess(guess)){
 		    //letterButton.setBackground(Color.GREEN);
-		    letterButton.setStyle("-fx-base:green;-fx-text-fill:blue");
+		    letterButton.setStyle("-fx-background-color:green;fx-opacity: 0.9;-fx-text-fill:blue");
 		    //letterButton.setForeground(Color.BLUE);
 		    //letterButton.setEnabled(false);
 		    letterButton.setDisable(true);
@@ -132,7 +133,7 @@ public class HangManEventHandler {
 		    //letterButton.setBackground(Color.RED);
 		    //letterButton.setForeground(Color.WHITE);
 		    //letterButton.setEnabled(false);
-		    letterButton.setStyle("-fx-base:red;-fx-text-fill:white");
+		    letterButton.setStyle("-fx-background-color:red;-fx-text-fill:white");
 		    letterButton.setDisable(true);
 	    }
 

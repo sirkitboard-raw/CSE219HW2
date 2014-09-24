@@ -364,7 +364,7 @@ public class HangManGameStateManager {
         if(wrongGuessTimes>=6){
              // CHANGE THE GAME STATE
             currentGameState = HangManGameState.GAME_OVER;
-            
+            ui.disableAllButtons();
             // ADD THE COMPLETED GAME TO THE HISTORY
             gamesHistory.add(gameInProgress);
             
@@ -376,8 +376,9 @@ public class HangManGameStateManager {
         {
             // CHANGE THE GAME STATE
             currentGameState = HangManGameState.GAME_OVER;
-            
-            // ADD THE COMPLETED GAME TO THE HISTORY
+	        ui.disableAllButtons();
+
+	        // ADD THE COMPLETED GAME TO THE HISTORY
             gamesHistory.add(gameInProgress);
             
             // AND MAKE SURE THE STATS PAGE IS CURRENT
